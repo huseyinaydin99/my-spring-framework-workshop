@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="selam" class="tr.com.huseyinaydin.Selam">
+		<property name="mesaj1" value="Selamun aleyküm" />
+		<property name="mesaj2" value="Aleyküm selam." />
+	</bean>
+
+	<bean id="yazar" class="tr.com.huseyinaydin.Yazar" parent="selam">
+		<property name="mesaj1" value=" * * * " />
+		<property name="mesaj3" value="Hüseyin AYDIN" />
+	</bean>
+
+</beans>
