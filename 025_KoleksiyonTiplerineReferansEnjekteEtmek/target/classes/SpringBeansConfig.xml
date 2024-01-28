@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="BeanOgrenci" class="tr.com.huseyinaydin.Ogrenci">
+		<property name="adi" value="Umut" />
+		<property name="soyadi" value="Yıldız" />
+		<property name="bolumu" value="Yazılım Mühendisliği" />
+		<property name="yasi" value="33" />
+	</bean>
+
+	<bean id="BeanKoleksiyonlar"
+		class="tr.com.huseyinaydin.Koleksiyonlar">
+
+		<!-- java.util.List -->
+		<property name="listler">
+			<list>
+				<value>571</value>
+				<ref bean="BeanOgrenci" />
+				<bean class="tr.com.huseyinaydin.Ogrenci">
+					<property name="adi" value="Umut" />
+					<property name="soyadi" value="Yıldız" />
+					<property name="bolumu" value="Yazılım Mühendisliği" />
+					<property name="yasi" value="33" />
+				</bean>
+			</list>
+		</property>
+
+		<!-- java.util.Set -->
+		<property name="setler">
+			<set>
+				<value>632</value>
+				<ref bean="BeanOgrenci" />
+				<bean class="tr.com.huseyinaydin.Ogrenci">
+					<property name="adi" value="Salih" />
+					<property name="soyadi" value="Demirbronz" />
+					<property name="bolumu" value="İlkel Teknolojiler" />
+					<property name="yasi" value="99" />
+				</bean>
+			</set>
+		</property>
+
+		<!-- java.util.Map -->
+		<property name="mapler">
+			<map>
+				<entry key="Big Data" value="Veli Demir" />
+				<entry key="JSP" value-ref="BeanOgrenci" />
+				<entry key="ZK">
+					<bean class="tr.com.huseyinaydin.Ogrenci">
+						<property name="adi" value="Hüseyin" />
+						<property name="soyadi" value="Aydın" />
+						<property name="bolumu" value="Hardcore Psycho Programmer" />
+						<property name="yasi" value="1000" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+
+		<!-- java.util.Properties -->
+		<property name="propertiesler">
+			<props>
+				<prop key="PrimeFaces">Halil Yıldırım</prop>
+				<prop key="JSF">Salim Baysil</prop>
+				<prop key="Hibernate">Şakir Şenşakırdakçıoğulları</prop>
+				<prop key="Spring">Efe Akgül</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

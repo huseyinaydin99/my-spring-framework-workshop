@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"				     		
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+   <bean id="beanOgrenci" class="tr.com.huseyinaydin.Ogrenci">                                          
+      <property name="ogrenciList">
+        <list>
+           <value>Hasan Fefer</value>
+           <value>Gizem Beyazkuş</value>
+           <value>Salih Demirci</value>
+        </list>
+      </property>
+      
+     <property name="ogrenciSet">
+        <set>
+     	   <value>Hasan Fefer</value>
+           <value>Gizem Beyazkuş</value>
+           <value>Salih Demirci</value>
+        </set>
+      </property>
+      
+     <property name="ogrenciMap">
+        <map>
+           <entry key="1" value="Hasan Fefer"/>
+           <entry key="2" value="Gizem Beyazkuş"/>
+           <entry key="3" value="Salih Demirci"/>
+        </map>
+      </property>
+
+     <property name="ogrenciProp">
+        <props>
+           <prop key="Şerefsiz">Hasan Fefer</prop>
+           <prop key="Kaşar">Gizem Beyazkuş</prop>
+           <prop key="Edepsiz">Salih Demirci</prop>
+        </props>
+      </property>
+   </bean>
+</beans>

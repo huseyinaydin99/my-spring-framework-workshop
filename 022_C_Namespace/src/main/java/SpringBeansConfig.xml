@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:c="http://www.springframework.org/schema/c" 					     		
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">                                   
+
+    <!-- 
+	<bean id="beanAdres" class="tr.com.huseyinaydin.Adres">
+		<property name="sehir" value="Niğde"/>
+		<property name="semt" value="Merkez"/>
+		<property name="mahalle" value="Selçuk "/>
+		<property name="cadde" value="Bilmiyorum"/>
+		<property name="no" value="31"/>
+		<property name="daire" value="69"/>
+	</bean> 
+	-->
+
+	<bean id="beanAdres" class="tr.com.huseyinaydin.Adres"
+		p:sehir="Niğde"
+		p:semt="Merkez"
+		p:mahalle="Selçuk"
+		p:cadde="Bilmiyorum"
+		p:no="31"
+		p:daire="69">
+    </bean>	
+
+	<!-- 
+	<bean id="beanCalisan" class="tr.com.huseyinaydin.Calisan">
+		<constructor-arg name="adi" value="Samet" />
+		<constructor-arg name="soyadi" index="1"  value="Ünlü" />
+		<constructor-arg type="int" value="29" />
+		<constructor-arg index="3" ref="beanAdres" />
+	</bean>
+	-->
+	
+		
+	<bean id="beanCalisan" class="tr.com.huseyinaydin.Calisan"
+          c:_0="Samet" 
+          c:_1="Ünlü" 
+          c:_2="29" 
+          c:_3-ref="beanAdres">
+	</bean>
+	
+	<!-- 
+	<bean id="beanCalisan" class="tr.com.huseyinaydin.Calisan"
+		c:adi="Samet" 
+		c:soyadi="Ünlü" 
+		c:yasi="29"
+		c:adres-ref="beanAdres">                                         
+	</bean>
+	-->	
+</beans>
