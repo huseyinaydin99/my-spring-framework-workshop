@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="calisan" class="tr.com.huseyinaydin.Calisan" autowire="byType">							
+		<property name="adi">
+			<value>Yasin</value>
+		</property>
+		<property name="soyadi" value="Aydın" />
+	   <!--	<property name="adres" ref="adres"></property> -->                                                   
+	   <!-- <property name="adres" ref="adres"/> -->
+	   <!-- <property name="adres"> <ref bean="adres"/> </property> -->
+	</bean>
+
+	<bean id="adres" class="tr.com.huseyinaydin.Adres" >
+		<property name="tamAdresi" value="localhost:9999"/>
+	</bean>
+</beans>
