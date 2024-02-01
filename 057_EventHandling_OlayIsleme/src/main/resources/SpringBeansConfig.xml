@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="sozlerBean" class="tr.com.huseyinaydin.Sozler">
+		<property name="cumle" value="Bilişim, yazılım teknolojileri insanoğlunun şu ana kadar ki elde edebildiği en üstün şey ve süper güce en yakın şeydir." />
+	</bean>
+
+	<bean id="baslatmaBean" class="tr.com.huseyinaydin.ContextOlayBaslatmaIsleyicisi" />
+
+	<bean id="durdurmaBean" class="tr.com.huseyinaydin.ContextOlayDurdurmaIsleyicisi" />
+	
+</beans>
