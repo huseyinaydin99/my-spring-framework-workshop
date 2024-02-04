@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="personelServisBean"
+		class="tr.com.huseyinaydin.impl.PersonelServisImpl">
+		<property name="adi" value="Yasemin" />
+		<property name="soyadi" value="Oğlukızı" />
+		<property name="tecrube" value="2" />
+	</bean>
+
+	<bean id="metotCagiriOncesiYapilacaklar" class="tr.com.huseyinaydin.aop.MetotCagiriOncesiYapilacaklar" />
+
+	<bean id="metotCagiriSonrasiYapilacaklar" class="tr.com.huseyinaydin.aop.MetotCagiriSonrasiYapilacaklar" />
+
+	<aop:config>
+		<aop:aspect id="aspects" ref="metotCagiriOncesiYapilacaklar">
+			<aop:pointcut id="pointCutBefore" expression="execution(* tr.com.huseyinaydin.IPersonelServis.selamVer(..))" />
+			<aop:before method="ilkGorev" pointcut-ref="pointCutBefore" />
+		</aop:aspect>
+
+		<aop:aspect id="aspects"
+			ref="metotCagiriSonrasiYapilacaklar">
+			<aop:pointcut id="pointCutAfter"
+				expression="execution(* tr.com.huseyinaydin.IPersonelServis.selamVer(..))" />
+			<aop:after method="sonGorev" pointcut-ref="pointCutAfter" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>
